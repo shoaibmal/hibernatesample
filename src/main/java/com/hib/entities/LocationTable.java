@@ -1,23 +1,37 @@
 package com.hib.entities;
 
-import java.sql.SQLException;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.apache.log4j.Logger;
-
+@Entity
+@Table(name="location_table")
 public class LocationTable {
 	
-public int getClientID(String dasherooId){
-	int clientId = 0;
-	 try {
-		resultSet = statement
-			      .executeQuery("select Client_ID from location_table WHERE Dasheroo_ID='"+dasherooId+"'");
-		if(resultSet.next()){
-			clientId =  resultSet.getInt(1);	
-		}
-	} catch (SQLException e) {
-		log.fatal(e);
-		e.printStackTrace();
+	@Id
+	@GeneratedValue
+	@Column(name="Client_ID")
+	private Integer id;
+	
+	@Column(name="Client_Name")
+	private String clientName;
+
+	public Integer getId() {
+		return id;
 	}
-	 return clientId;
-}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getClientName() {
+		return clientName;
+	}
+
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
+	}
+	
 }

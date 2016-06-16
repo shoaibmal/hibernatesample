@@ -6,13 +6,14 @@
 <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.password">admin</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
     	<property name="show_sql">true</property> 
     	<property name="connection.pool_size">1</property>
     	
     	<mapping class="com.hib.entities.Student"></mapping>
+    	<mapping class="com.hib.entities.LocationTable"></mapping>
 
     </session-factory>
 </hibernate-configuration>
